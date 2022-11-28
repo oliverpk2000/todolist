@@ -14,6 +14,7 @@ export class AppComponent {
   todoStyle: string = "todo";
   entryNotes: string = "";
   showNotes: boolean = false;
+  complete: string = "complete";
 
   createEntry() {
     this.toDoList.push({name: this.entryName, finishBy:this.entryFinishBy, notes: this.entryNotes});

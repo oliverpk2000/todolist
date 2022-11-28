@@ -5,7 +5,7 @@
   <div>
     <p>
       {{i + 1}} {{todo.name}} {{todo.finishBy | date: "d/M/yy"}}
-      <button (click)="delete(i)">completed</button>
+      <button [ngClass]="complete" (click)="delete(i)">completed</button>
     </p>
     <p *ngIf="showNotes">{{todo.notes}}</p>
   </div>
