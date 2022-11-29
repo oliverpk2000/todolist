@@ -1,19 +1,21 @@
 <p>add an Entry to your todo list</p>
-<button (click)="changeNotesState()">notes</button>
+<button (click)="changeNotesState()"  [ngClass]="notes">notes</button>
+
+<div [ngClass]="inputBox" (keydown.enter)="createEntry()">
+  <div [ngClass]="inputField">
+    <input type="text" placeholder="thing to do" [(ngModel)]="entryName">
+    <input type="date" [(ngModel)]="entryFinishBy">
+    <input type="text" placeholder="notes" [(ngModel)]="entryNotes">
+    <button (click)="createEntry()">create</button>
+  </div>
+</div>
 
 <div [ngClass]="todoStyle" *ngFor="let todo of toDoList; let i = index">
   <div>
-    <p>
-      {{i + 1}} {{todo.name}} {{todo.finishBy | date: "d/M/yy"}}
+    <p [ngClass]="entry">
+      {{i + 1}}: {{todo.name}} {{todo.finishBy | date: "d/M/yy"}}
       <button [ngClass]="complete" (click)="delete(i)">completed</button>
     </p>
     <p *ngIf="showNotes">{{todo.notes}}</p>
   </div>
-</div>
-
-<div [ngClass]="inputBox" (keydown.enter)="createEntry()">
-  <input type="text" placeholder="thing to do" [(ngModel)]="entryName">
-  <input type="date" [(ngModel)]="entryFinishBy">
-  <input type="text" placeholder="notes" [(ngModel)]="entryNotes">
-  <button (click)="createEntry()" >create</button>
 </div>

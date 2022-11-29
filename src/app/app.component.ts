@@ -15,6 +15,9 @@ export class AppComponent {
   entryNotes: String = "";
   showNotes: boolean = false;
   complete: String = "complete";
+  inputField:String = "inputField";
+  entry: String = "entry";
+  notes: String = "notes";
 
   createEntry() {
     this.toDoList.push({name: this.entryName, finishBy:this.entryFinishBy, notes: this.entryNotes});
