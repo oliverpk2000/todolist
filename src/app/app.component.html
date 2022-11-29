@@ -1,5 +1,5 @@
 <p>add an Entry to your todo list</p>
-<button (click)="changeNotesState()">show notes</button>
+<button (click)="changeNotesState()">notes</button>
 
 <div [ngClass]="todoStyle" *ngFor="let todo of toDoList; let i = index">
   <div>
@@ -11,9 +11,9 @@
   </div>
 </div>
 
-<div [ngClass]="inputBox">
+<div [ngClass]="inputBox" (keydown.enter)="createEntry()">
   <input type="text" placeholder="thing to do" [(ngModel)]="entryName">
   <input type="date" [(ngModel)]="entryFinishBy">
   <input type="text" placeholder="notes" [(ngModel)]="entryNotes">
-  <button (click)="createEntry()">create</button>
+  <button (click)="createEntry()" >create</button>
 </div>
