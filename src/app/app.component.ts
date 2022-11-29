@@ -7,14 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'todolist';
-  inputBox: string = 'inputBox';
-  entryName: string = "";
+  inputBox: String = 'inputBox';
+  entryName: String = "";
   entryFinishBy: Date = new Date();
   toDoList: Entry[] = []
-  todoStyle: string = "todo";
-  entryNotes: string = "";
+  todoStyle: String = "todo";
+  entryNotes: String = "";
   showNotes: boolean = false;
-  complete: string = "complete";
+  complete: String = "complete";
 
   createEntry() {
     this.toDoList.push({name: this.entryName, finishBy:this.entryFinishBy, notes: this.entryNotes});
@@ -33,7 +33,7 @@ export class AppComponent {
 }
 
 class Entry{
-  name: string = "";
+  name: String = "";
   finishBy: Date = new Date();
-  notes: string = "";
+  notes: String = "";
 }
